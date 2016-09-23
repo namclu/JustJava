@@ -1,6 +1,8 @@
 package com.example.android.justjava;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -54,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
         //Calculates totalPrice by calling calculatePrice and providing coffeePrice & addOnPrice
         int totalPrice = calculatePrice(coffeePrice, addOnPrice);
 
+        String subject = getString(R.string.just_java_subject) + " " + customerName;
         String orderMessage = createOrderSummary(customerName, totalPrice, hasWhippedCream, hasChocolate);
-        displayMessage(orderMessage);
+        composeEmail(subject, orderMessage);
+        //displayMessage(orderMessage);
     }
 
     /**
@@ -106,9 +110,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message){
+    /*private void displayMessage(String message){
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
+    }*/
+
+    /*
+    * This method creates an email receipt for the customer.
+    * */
+    public void composeEmail(String subject, String emailBody){
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); //Only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, emailBody);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
     }
 
     /**
@@ -130,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         sb.append("\nTotal: $" + totalPrice);
         sb.append("\nAdd whipped cream? " + hasWhippedCream);
         sb.append("\nAdd chocolate? " + hasChocolate);
-        sb.append("\nThank You!");
+        sb.append("\n" + getString(R.string.thank_you));
 
         return sb.toString();
     }

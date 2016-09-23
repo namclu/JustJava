@@ -23,40 +23,34 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:text="Toppings"
-            android:textAllCaps="true" />
+            android:layout_marginBottom="16dp"
+            android:text="@string/toppings_header"
+            style="@style/HeaderTextStyle"/>
 
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
-            android:layout_marginBottom="4dp"
-            android:textSize="16sp"
-            android:text="Whipped cream"/>
+            android:text="@string/whipped_cream"
+            style="@style/CheckboxStyle"/>
 
         <CheckBox
             android:id="@+id/chocolate_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
             android:layout_marginBottom="16dp"
-            android:textSize="16sp"
-            android:text="Chocolate"/>
+            android:text="@string/chocolate"
+            style="@style/CheckboxStyle"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:text="Quantity"
-            android:textAllCaps="true" />
+            android:layout_marginBottom="16dp"
+            android:text="@string/quantity_header"
+            style="@style/HeaderTextStyle" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
             android:orientation="horizontal">
 
             <Button
@@ -82,6 +76,7 @@
 
         </LinearLayout>
 
+<!--
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,12 +92,13 @@
             android:paddingBottom="16dp"
             android:text="$0"
             android:textColor="@android:color/black" />
+-->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
-            android:text="Order" />
+            android:text="@string/order_button" />
 
     </LinearLayout>
 

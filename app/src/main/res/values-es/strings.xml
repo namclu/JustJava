@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustJava</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- XML Strings-->
+    <string name="toppings_header">Ingrediente</string>
+    <string name="whipped_cream">Crema Batida</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="quantity_header">Cantidad</string>
+    <string name="order_button">Orden</string>
+
+    <!-- Java Strings-->
+    <string name="thank_you">Gracias!</string>
+    <string name="just_java_subject">JustJava Order para</string>
+
+</resources>

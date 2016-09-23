@@ -1,6 +1,24 @@
-<resources>
-    <string name="app_name">Just Java</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">JustJava</string>
     <string name="action_settings">Settings</string>
+
+    <!-- XML Strings-->
+    <string name="toppings_header">Toppings</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="quantity_header">Quantity</string>
+    <string name="order_button">Order</string>
+
+    <!-- Java Strings-->
+    <string name="thank_you">Thank You!</string>
+
+    <!--
+    Subject line for the order summary email. It will be in the format of
+    "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_email_subject">JustJava order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="just_java_subject">JustJava Order for</string>
+
 </resources>
